@@ -11,12 +11,13 @@ Two Powershell scripts to create offers for NFTs on the Chia Blockchain.
 
 2. Then you will run the `make_offers.ps1` script and use the ID file you created in step 1. 
 
-Note that the price is based on mojos. For example if you want to price at 1 $XCH, you'll use 1000000000000. 
+	Note that the price is based on mojos. For example if you want to price at 1 $XCH, you'll use 1000000000000. 
 
-If you want to use a CAT you'll need to times your value by 1000 to get the correct number of mojos, and you will also need the Wallet ID for the CAT. You can get this with the `chia wallet show -w cat` command.
-So 35 $SBX would be 35000 for the amount. 
+	If you want to use a CAT you'll need to times your value by 1000 to get the correct number of mojos, and you will also need the Wallet ID for the CAT. You can get this with the `chia wallet show -w cat` command.
 
-I also recommend using 0 for the fee amount. If you use more than 0, the offer will tie up a coin in your wallet which you don't want.
+	So 35 $SBX would be 35000 for the amount. 
+
+	I also recommend using 0 for the fee amount. If you use more than 0, the offer will tie up a coin in your wallet which you don't want.
 
 	To run the script:  `.\make_offers.ps1`
 	
