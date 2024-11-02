@@ -45,12 +45,14 @@ $total_lines = (Get-Content -Path $filename | Where-Object { $_ -ne "" }).Count
 $fileContent = Get-Content -Path $filename
 
 foreach ($line in $fileContent) {
-    Write-Host "Processing: $line"
-	Set-Content -Path "tempfile.json" -Value "{""offer"":{""$cat"":$price,""$line"":-1},""fee"":$fee,""driver_dict"":{},""validate_only"":false}"
+	$launcherID = $line -split '\s+' | Select-Object -First 1
+	
+    Write-Host "Processing: $launcherID"
+	Set-Content -Path "tempfile.json" -Value "{""offer"":{""$cat"":$price,""$launcherID"":-1},""fee"":$fee,""driver_dict"":{},""validate_only"":false}"
 	$jsonResponse = Invoke-Expression "$blockchain rpc wallet create_offer_for_ids -j tempfile.json"
 	$jsonObject = $jsonResponse | ConvertFrom-Json
 	$offer = $jsonObject.offer
-	Set-Content -Path "$subfolderPath\$line.offer" -Value $offer
+	Set-Content -Path "$subfolderPath\$launcherID.offer" -Value $offer
 }
 Remove-Item -Path "tempfile.json"
 Write-Host "Done."

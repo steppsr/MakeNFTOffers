@@ -3,7 +3,7 @@ Two Powershell scripts to create offers for NFTs on the Chia Blockchain.
 
 ## How to use
 
-1. First you'll need a file with all the Launcher IDs for your NFTs. You can create this file using the first script `get_launcherids.ps1`. The resulting file will contain a single line for each NFT with both the Launcher ID and the first URI for the NFT. I use the URI to determine which Launcher IDs I want to keep to make offers for since the script will pull IDs for every NFT in the wallet and you may not want to create offers for every NFT. You will need to edit the file once created to remove the URIs from the file. 
+1. First you'll need a file with all the Launcher IDs for your NFTs. You can create this file using the first script `get_launcherids.ps1`. The resulting file will contain a single line for each NFT with both the Launcher ID and the first URI for the NFT. I use the URI to determine which Launcher IDs I want to keep to make offers for since the script will pull IDs for every NFT in the wallet and you may not want to create offers for every NFT. You will need to edit the file once created to remove any NFTs you don't want to create offers for. You can leave the URI on the line, the next script will ignore it.
 
 	To run the script:  `.\get_launcherids.ps1`
 	
